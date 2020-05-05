@@ -55,5 +55,5 @@ student_id = Faker::Number.between(from: 1, to: 100)
 skill_id = Faker::Number.between(from: 1, to: 10)
 
 
-educations 
+#educations 
 start
