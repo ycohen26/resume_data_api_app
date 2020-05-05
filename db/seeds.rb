@@ -103,7 +103,7 @@ end
   details = Faker::Movies::Lebowski.quote
   student_id = Faker::Number.between(from: 1, to: 100)
 
-  education = Education.creat!(
+  education = Education.create!(
     start_date: start_date,
     end_date: end_date,
     degree: degree,
