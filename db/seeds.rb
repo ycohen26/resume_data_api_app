@@ -20,6 +20,8 @@
 #   user = User.create!(first_name: first_name, last_name: last_name, address_1: address1, address_2: address2, city: city, state: state, zipcode: zipcode, email: email, password: password)
 # end
 
+
+# student
 100.times do
   first_name = Faker::Name.first_name
   last_name = Faker::Name.last_name
@@ -49,3 +51,10 @@
     password: password
   )
 end
+
+# capstone
+name = Faker::Esport.player
+description = Faker::ChuckNorris.fact
+url = Faker::Internet.url
+screenshot_url = Faker::Internet.url
+student_id = student.id
