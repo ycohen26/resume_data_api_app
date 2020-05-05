@@ -21,6 +21,45 @@
 # end
 
 
+#student 
+
+first_name = Faker::Name.first_name
+last_name = Faker::Name.last_name
+email = "#{first_name[0]}.#{last_name}@email.com"
+phone_number = Faker::PhoneNumber.cell_phone
+short_bio = Faker::Hipster.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 4)
+linkedin_url = Faker::Internet.url
+twitter_handle = Faker::Internet.url(host: 'twitter.com')
+personal_site_url = Faker::Internet.url
+online_resume_url = Faker::Internet.url
+github_url = Faker::Internet.url(host: 'github.com')
+photo_url
+password = "password"
+
+#experiences
+
+start_date = Faker::Date.between_except(from: 3.year.ago, to: 2.year.from_now, excepted: Date.today)
+end_date = Faker::Date.between_except(from: 2.year.ago, to: 1.year.from_now, excepted: Date.today)
+job_title = Faker::Job.title
+company = Faker::Company.name
+details = Faker::Quote.famous_last_words
+student_id = Faker::Number.between(from: 1, to: 100)
+
+
+#skills
+
+name = Faker::Job.key_skill
+
+
+#student_skills
+student_id = Faker::Number.between(from: 1, to: 100)
+skill_id = Faker::Number.between(from: 1, to: 10)
+
+
+educations 
+start
+
+
 # student
 100.times do
   first_name = Faker::Name.first_name
@@ -58,3 +97,4 @@ description = Faker::ChuckNorris.fact
 url = Faker::Internet.url
 screenshot_url = Faker::Internet.url
 student_id = student.id
+
