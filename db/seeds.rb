@@ -6,26 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# 100.times do
-#   first_name = Faker::Name.first_name
-#   last_name = Faker::Name.last_name
-#   address1 = Faker::Address.street_address
-#   address2 = Faker::Address.secondary_address
-#   city = Faker::Address.city
-#   state = Faker::Address.state
-#   zipcode = Faker::Address.zip_code
-#   email = "#{first_name[0]}.#{last_name}@email.com"
-#   password = "password"
-
-#   user = User.create!(first_name: first_name, last_name: last_name, address_1: address1, address_2: address2, city: city, state: state, zipcode: zipcode, email: email, password: password)
-# end
-
-
-# student
+student
 100.times do
   first_name = Faker::Name.first_name
   last_name = Faker::Name.last_name
-  email = "#{first_name[0]}.#{last_name}@email.com"
+  email = "#{first_name}.#{last_name}@email.com"
   phone_number = Faker::PhoneNumber.cell_phone
   short_bio = Faker::Hipster.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 4)
   linkedin_url = Faker::Internet.url
@@ -36,7 +21,7 @@
   photo_url = Faker::Avatar.image
   password = "password"
 
-  user = User.create!(
+  student = Student.create!(
     first_name: first_name,
     last_name: last_name,
     email: email,
@@ -88,7 +73,7 @@ end
   student_id = Faker::Number.between(from: 1, to: 100)
   skill_id = Faker::Number.between(from: 1, to: 10)
 
-  student_skills = Student_Skill.create!(
+  student_skills = StudentSkill.create!(
     student_id: student_id,
     skill_id: skill_id
   )
@@ -99,7 +84,7 @@ end
   start_date = Faker::Date.between_except(from: 4.year.ago, to: 3.year.from_now, excepted: Date.today)
   end_date = Faker::Date.between_except(from: 3.year.ago, to: 2.year.from_now, excepted: Date.today)
   degree = Faker::Educator.subject
-  unversity = Faker::University.name
+  university = Faker::University.name
   details = Faker::Movies::Lebowski.quote
   student_id = Faker::Number.between(from: 1, to: 100)
 
@@ -107,7 +92,7 @@ end
     start_date: start_date,
     end_date: end_date,
     degree: degree,
-    unversity: unversity,
+    university: university,
     details: details,
     student_id: student_id
   )
