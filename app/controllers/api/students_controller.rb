@@ -25,7 +25,7 @@ class Api::StudentsController < ApplicationController
 
   def show
     @student = Student.find(params[:id])
-    if @student = current_student
+    if @student == current_student
       @first_name = @student.first_name
       @last_name = @student.last_name
       @email = @student.email
@@ -48,8 +48,8 @@ class Api::StudentsController < ApplicationController
   end
 
   def update
-    if @student = current_student
-      @student = Student.find_by(id: params[:id])
+    @student = Student.find_by(id: params[:id])
+    if @student == current_student
       @student.first_name = params[:first_name] || @student.first_name
       @student.last_name = params[:last_name] || @student.last_name
       @student.email = params[:email] || @student.email

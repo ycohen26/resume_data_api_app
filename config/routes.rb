@@ -10,12 +10,12 @@ Rails.application.routes.draw do
 
     post "/sessions" => "sessions#create"
 
-    patch "/experiences" => "experiences#update"
+    patch "/experiences/:id" => "experiences#update"
 
-    patch "/skills" => "skills#update"
+    patch "/skills/:id" => "skills#update"
 
-    patch "/educations" => "educations#update"
+    patch "/educations/:id" => "educations#update"
 
-    patch "/capstones" => "capstones#update"
+    patch "/capstones/:id" => "capstones#update"
   end
 end
