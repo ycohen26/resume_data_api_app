@@ -8,7 +8,7 @@ class Api::ExperiencesController < ApplicationController
     @experience.company = params[:company] || @experience.company
     @experience.details = params[:details] || @experience.details
     if @experience.save
-      render "show.json.jb"
+      render "../views/api/students/show.json.jb"
     else
       render json: {errors: @experience.errors.full_messages}, status: :bad_request
     end

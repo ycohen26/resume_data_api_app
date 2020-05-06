@@ -71,7 +71,7 @@ end
 #student_skills
 1000.times do
   student_id = Faker::Number.between(from: 1, to: 100)
-  skill_id = Faker::Number.between(from: 1, to: 10)
+  skill_id = Faker::Number.between(from: 1, to: 200)
 
   student_skills = StudentSkill.create!(
     student_id: student_id,
