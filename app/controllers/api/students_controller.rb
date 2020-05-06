@@ -47,4 +47,24 @@ class Api::StudentsController < ApplicationController
     end
   end
 
+  def update
+    @student = Student.find_by(id: params[:id])
+    @student.first_name = params[:first_name] || @student.first_name
+    @student.last_name = params[:last_name] || @student.last_name
+    @student.email = params[:email] || @student.email
+    @student.phone_number = params[:phone_number] || @student.phone_number
+    @student.short_bio = params[:short_bio] || @student.short_bio
+    @student.linkedin_url = params[:linkedin_url] || @student.linkedin_url
+    @student.twitter_handle = params[:twitter_handle] || @student.twitter_handle
+    @student.personal_site_url = params[:personal_site_url] || @student.personal_site_url
+    @student.online_resume_url = params[:online_resume_url] || @student.online_resume_url
+    @student.github_url = params[:github_url] || @student.github_url
+    @student.photo_url = params[:photo_url] || @student.photo_url
+    if @student.save
+      render "show.json.jb"
+    else
+      render json: {errors: @student.errors.full_messages}, status: :bad_request
+    end
+  end
+
 end
